@@ -1,9 +1,7 @@
 import React, {Component} from 'react';
-// import logo from './logo.svg';
 import './App.css';
 
 import Movie from "./Movie"
-
 
 const movies = [
   {
@@ -28,7 +26,7 @@ const movies = [
 
 
 class App extends Component {
-  
+
 
   render(){
     return (
@@ -36,7 +34,7 @@ class App extends Component {
         <header className="App-header">
           <h1>React Movie App</h1>
           </header>
-        {movies.map(film => <Movie key={film.title} movie={film} desc={film.desc}/>)}
+        {movies.map(film => <Movie key={film.id} movie={film} desc={film.desc}/>)}
       </div>
     );
   }
