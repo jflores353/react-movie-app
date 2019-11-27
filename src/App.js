@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch, Link } from 'react-router-dom';
 import './App.css';
 
 import MoviesList from "./MoviesList"
+import MovieDetail from "./MovieDetail"
 
 const App = () => (
   <Router>
@@ -14,7 +15,7 @@ const App = () => (
       </header>
       <Switch>
         <Route exact path="/" component={MoviesList} />  
-        <Route exact path="/:id" component={ Test } />  
+        <Route exact path="/:id" component={ MovieDetail } />  
       </Switch>
     </div>
   </Router>
@@ -22,6 +23,3 @@ const App = () => (
 
 export default App;
 
-const Test = ({ match }) => (
-  <h1>{match.params.id}</h1>
-)
