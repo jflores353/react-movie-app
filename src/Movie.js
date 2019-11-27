@@ -7,7 +7,6 @@ export default class Movie extends Component {
     movie: PropTypes.shape({
       title: PropTypes.string.isRequired,
     }),
-    desc: PropTypes.string
   }
   
   render(){
