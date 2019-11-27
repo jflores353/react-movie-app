@@ -1,45 +1,47 @@
 import React, {Component} from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 
+import Movie from "./Movie"
+
+
+const movies = [
+  {
+    id:1,
+    title:"Tommy Boy",
+    desc: "Comedy"
+  },
+  {
+    id:2,
+    title: "Star Wars",
+    desc: "Space movie"
+  },
+  {
+    id:3,
+    title: "Forrest Gump"
+  },
+  {
+    id:4,
+    title: "Pineapple Express"
+  }
+]
 
 
 class App extends Component {
-  state = {
-    toggle: true
-  }
-
-  toggle = () => {
-    this.setState({
-      toggle: !this.state.toggle
-    })
-  }
+  
 
   render(){
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <Welcome text="Welcome to Using Props"/>
-          { this.state.toggle && 
-            <p>This should show and hide</p>
-          }
-          <button onClick = { this.toggle }>Show / Hide</button> 
-          
-        </header>
+          <h1>React Movie App</h1>
+          </header>
+        {movies.map(film => <Movie key={film.title} movie={film} desc={film.desc}/>)}
       </div>
     );
   }
 }
 
-class Welcome extends Component {
-   render() {
-     const { text } = this.props;
-     return (
-       <h1 className="App-title">{text}</h1>
-     )
-   }
-}
 
 
 export default App;
